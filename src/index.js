@@ -16,8 +16,7 @@ export function application (config) {
   return app;
 }
 
-
-export const start = (config) => new Promise(async resolve => {
+export const start = config => new Promise(async (resolve) => {
   const app = await application(config);
   const { env: { http: { host, port } } } = config;
 
