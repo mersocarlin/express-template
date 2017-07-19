@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development && supervisor --watch src ./bin/service.js",
     "lint": "./node_modules/.bin/eslint src/",
-    "prettify": "./node_modules/.bin/prettier --single-quote --no-semi --trailing-comma es5 --write \"{src,spec}/**/*.js\"",
+    "prettify": "./node_modules/.bin/prettier --single-quote --no-semi --trailing-comma es5 --write \"{bin,config,src,spec}/**/*.js\"",
     "start": "node bin/service.js",
     "test": "npm run lint && NODE_ENV=test mocha --compilers js:babel-core/register --require babel-polyfill --recursive ./spec"
   },
@@ -43,5 +43,8 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "meaning-error": "^2.1.0"
+  },
+  "engines": {
+    "node": "8.x"
   }
 }

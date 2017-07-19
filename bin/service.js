@@ -1,9 +1,9 @@
-require('babel-core/register');
-require('babel-polyfill');
+require('babel-core/register')
+require('babel-polyfill')
 
+const config = require('../config')
+const app = require('../src')
 
-var app = require('../src/');
-app.start(require('../config').default)
-  .catch(function (error) {
-    console.error(error);
-  });
+app.start(config).catch(function(error) {
+  console.error(error)
+})
