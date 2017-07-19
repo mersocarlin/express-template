@@ -1,14 +1,14 @@
-import ping from './ping';
+import ping from './ping'
 
+export default app => {
+  app.get('/api/ping', ping.list)
 
-export default (app) => {
-  app.get('/api/ping', ping.list);
-
-  app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
-    console.error(err.stack || err); // eslint-disable-line no-console
+  // eslint-disable-next-line no-unused-vars
+  app.use((err, req, res, next) => {
+    console.error(err.stack || err) // eslint-disable-line no-console
 
     if (err) {
-      res.sendStatus(500);
+      res.sendStatus(500)
     }
-  });
-};
+  })
+}

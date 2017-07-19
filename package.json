@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development && supervisor --watch src ./bin/service.js",
-    "start": "node bin/service.js",
     "lint": "./node_modules/.bin/eslint src/",
+    "prettify": "./node_modules/.bin/prettier --single-quote --no-semi --trailing-comma es5 --write \"{src,spec}/**/*.js\"",
+    "start": "node bin/service.js",
     "test": "npm run lint && NODE_ENV=test mocha --compilers js:babel-core/register --require babel-polyfill --recursive ./spec"
   },
   "repository": {
@@ -23,10 +24,13 @@
     "chai": "^4.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.1.0",
     "mocha": "^3.0.2",
+    "prettier": "^1.5.3",
     "supertest": "^3.0.0",
     "supervisor": "^0.12.0"
   },
